@@ -1,5 +1,10 @@
 # depslib dependency file v1.0
-1558043596 source:/home/alumno/Escritorio/PresantoAlex_Examen/Insturmento.c
+1558054756 source:/home/alumno/Escritorio/PresantoAlex_Examen/Insturmento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Insturmento.h"
 
 1558043529 source:/home/alumno/Escritorio/PresantoAlex_Examen/Musico.c
 
@@ -31,5 +36,5 @@
 
 1558049995 /home/alumno/Escritorio/PresantoAlex_Examen/Insturmento.h
 
-1558051146 /home/alumno/Escritorio/PresantoAlex_Examen/Musico.h
+1558054771 /home/alumno/Escritorio/PresantoAlex_Examen/Musico.h
 

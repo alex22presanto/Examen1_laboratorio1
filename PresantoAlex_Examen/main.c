@@ -62,7 +62,7 @@ int main()
                         musico_alta(arrayMusico,QTY_TIPO_M,&contadorIdMusico);
                         break;
                     case 2:
-                        musico_modificar(arrayMusico,QTY_TIPO_M);
+                        musico_modificar(Musico arrayM[],Instrumento arrayI[],Orquesta arrayO[],int sizeM,int sizeI,int sizeO);
                         break;
                     case 3:
                         musico_baja(arrayMusico,QTY_TIPO_M);

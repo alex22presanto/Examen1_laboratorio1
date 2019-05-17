@@ -6,7 +6,7 @@
 #define TEXT_SIZE 51
 
 
-int instrumento_Inicializar(Instrumento array[], int size)                                    /
+int instrumento_Inicializar(Instrumento array[], int size)
 {
     int retorno=-1;
     if(array!= NULL && size>0)
@@ -115,5 +115,6 @@ int instrumento_listar(Instrumento array[], int size)
     }
     return retorno;
 }
+
 
 
