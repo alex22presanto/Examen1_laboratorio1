@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1558043596 source:/home/alumno/Escritorio/PresantoAlex_Examen/Insturmento.c
+
+1558043529 source:/home/alumno/Escritorio/PresantoAlex_Examen/Musico.c
+
+1558044293 source:/home/alumno/Escritorio/PresantoAlex_Examen/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1558044327 /home/alumno/Escritorio/PresantoAlex_Examen/utn.h
+
+1558050936 source:/home/alumno/Escritorio/PresantoAlex_Examen/main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Insturmento.h"
+	"Musico.h"
+	"Orquesta.h"
+
+1558046900 source:/home/alumno/Escritorio/PresantoAlex_Examen/Orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Orquesta.h"
+
+1558045288 /home/alumno/Escritorio/PresantoAlex_Examen/Orquesta.h
+
+1558049995 /home/alumno/Escritorio/PresantoAlex_Examen/Insturmento.h
+
+1558051146 /home/alumno/Escritorio/PresantoAlex_Examen/Musico.h
+
