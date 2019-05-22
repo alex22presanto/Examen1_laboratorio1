@@ -134,7 +134,7 @@ int orquesta_baja(Orquesta array[], int sizeArray)
 }
 
 
-int orquesta_listar(Orquesta array[], int size)                      //cambiar orquesta
+int orquesta_listar(Orquesta array[], int size)
 {
     int retorno=-1;
     int i;
@@ -142,7 +142,7 @@ int orquesta_listar(Orquesta array[], int size)                      //cambiar o
     {
         for(i=0;i<size;i++)
         {
-            if(array[i].isEmpty==1)
+            if(array[i].isEmpty!=1)
             {
                 if(array[i].tipo==1)
                 {
