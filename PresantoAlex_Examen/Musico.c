@@ -64,30 +64,28 @@ int musico_buscarID(Musico array[], int size, int valorBuscado, int* posicion)
 }
 
 
-int musico_alta(Musico arrayM[],Instrumento arrayI[],Orquesta arrayO[], int sizeM,int sizeI,int sizeO, int* contadorID)
+int musico_alta(Musico array[],int size,int* contadorID)
 {
     int retorno=-1;
     int posicion;
-    if(array!=NULL && size>0 && contadorID!=NULL)
+    if(array !=NULL && size>0 && contadorID!=NULL)
     {
-        if(musico_buscarEmpty(arrayM,size,&posicion)==-1)                          //
+        if(musico_buscarEmpty(array,size,&posicion)==-1)                          //
         {
             printf("\nNo hay lugares vacios");
         }
         else
         {
             (*contadorID)++;
-            array[posicion].idUnico=*contadorID;
+            array[posicion].id=*contadorID;
             array[posicion].isEmpty=0;
-            utn_getName("Ingrese el nombre\n: ","\nNombre no valido",1,TEXT_SIZE,3,arrayM[posicion].nombre);
-            utn_getName("Ingrese el apellido\n: ","\nApelldio no valido",1,TEXT_SIZE,3,arrayM[posicion].apellido);
-            utn_getUnsignedInt("\nIngrese la edad","\nEdad no valida",1,sizeof(int),1,100,3,&arrayM[posicion].edad);
-            orquesta_listar(arrayO,sizeO);
-            utn_getUnsignedInt("\ingrese el ID de la orquesta ","\nvalor no valido",1,sizeof(int),1,sizeO,1,&arrayM[posicion].idOrquesta);
-            instrumento_listar(arrayI,sizeI);
-            utn_getUnsignedInt("\nIngrese el ID del Instrumento","\nvalor no valido",1,sizeof(int),1,sizeI,1,&arrayM[posicion].idInstrumento);
-            printf("\n Posicion: %d\n ID: %d\ Nombre: %s\n Apelldio: %s\nEdad: %d\n ID orquesta: %d\n ID instrumento: %d",
-                   posicion, arrayM[posicion].id,arrayM[posicion].nombre,arrayM[posicion].apellido,arrayM[posicion].edad,arrayM[posicion].idOrquesta,arrayM[posicion].idInstrumento);
+            utn_getName("Ingrese el nombre\n: ","\nNombre no valido",1,TEXT_SIZE,3,array[posicion].nombre);
+            utn_getName("Ingrese el apellido\n: ","\nApelldio no valido",1,TEXT_SIZE,3,array[posicion].apellido);
+            utn_getUnsignedInt("\nIngrese la edad","\nEdad no valida",1,sizeof(int),1,100,3,&array[posicion].edad);
+            utn_getUnsignedInt("\n Ingrese el ID de la orquesta ","\nvalor no valido",1,sizeof(int),1,size,1,&array[posicion].idOrquesta);
+            utn_getUnsignedInt("\nIngrese el ID del Instrumento","\nvalor no valido",1,sizeof(int),1,size,1,&array[posicion].idInstrumento);
+            printf("\n Posicion: %d\n ID: %d\n Nombre: %s\n Apelldio: %s\nEdad: %d\n ID orquesta: %d\n ID instrumento: %d",
+                   posicion, array[posicion].id,array[posicion].nombre,array[posicion].apellido,array[posicion].edad,array[posicion].idOrquesta,array[posicion].idInstrumento);
             retorno=0;
         }
     }
@@ -121,6 +119,52 @@ int musico_baja(Musico array[], int sizeArray)
     return retorno;
 }
 
+int musico_modificar(Musico arrayM[],Instrumento arrayI[],Orquesta arrayO[],int sizeM,int sizeI,int sizeO)
+{
+    int retorno=-1;
+    int posicion;
+    int id;
+    char opcion;
+    if(arrayM!=NULL && sizeM>0 && arrayI!=NULL && sizeI>0 && arrayO!=NULL && sizeO>0)
+    {
+        utn_getUnsignedInt("\nID a modificar: ","\nID no valido",1,sizeof(int),1,sizeM,1,&id);
+        if(musico_buscarID(arrayM,sizeM,id,&posicion)==-1)
+        {
+            printf("\nNo existe este ID");
+        }
+        else
+        {
+            do
+            {
+                printf("\n Posicion: %d\n ID: %d\n Nombre: %s\n Apelldio: %s\nEdad: %d\n ID orquesta: %d\n ID instrumento: %d",
+                   posicion, arrayM[posicion].id,arrayM[posicion].nombre,arrayM[posicion].apellido,arrayM[posicion].edad,arrayM[posicion].idOrquesta,arrayM[posicion].idInstrumento);
+                utn_getUnsignedInt("\n\n Que desa modificar?\n1- Nombre \n2- Apellido \n3- Edad \n4- Orquesta \n5- Instrumnto\n6-Salir","\nValor ingresado no valido",1,sizeof(int),1,6,3,&opcion);
+                switch(opcion)
+                {
+                    case 1:
+                        utn_getName("Ingrese el nombre\n: ","\nNombre no valido",1,TEXT_SIZE,3,arrayM[posicion].nombre);
+                        break;
+                    case 2:
+                        utn_getName("Ingrese el apellido\n: ","\nApelldio no valido",1,TEXT_SIZE,3,arrayM[posicion].apellido);
+                        break;
+                    case 3:
+                        utn_getUnsignedInt("\nIngrese la edad","\nEdad no valida",1,sizeof(int),1,100,3,&arrayM[posicion].edad);
+                        break;
+                    case 4:
+                        orquesta_listar(arrayO,sizeO);
+                        utn_getUnsignedInt("\n Ingrese el ID de la orquesta ","\nvalor no valido",1,sizeof(int),1,sizeO,1,&arrayM[posicion].idOrquesta);
+                        break;
+                    case 5:
+                        instrumento_listar(arrayI,sizeI);
+                        utn_getUnsignedInt("\nIngrese el ID del Instrumento","\nvalor no valido",1,sizeof(int),1,sizeI,1,&arrayM[posicion].idInstrumento);
+                        break;
+                }
+            }while(opcion!=6);
+            retorno=0;
+        }
+    }
+    return retorno;
+}
 
 int musico_listar(Musico array[], int size)
 {
@@ -133,7 +177,7 @@ int musico_listar(Musico array[], int size)
             if(array[i].isEmpty==1)
                 continue;
             else
-                 printf("\n ID: %d\ Nombre: %s\n Apelldio: %s\nEdad: %d\n ID orquesta: %d\n ID instrumento: %d",
+                 printf("\n ID: %d\n Nombre: %s\n Apelldio: %s\nEdad: %d\n ID orquesta: %d\n ID instrumento: %d",
                    array[i].id,array[i].nombre,array[i].apellido,array[i].edad,array[i].idOrquesta,array[i].idInstrumento);
         }
         retorno=0;

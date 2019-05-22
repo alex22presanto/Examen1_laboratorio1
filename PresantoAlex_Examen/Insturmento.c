@@ -89,19 +89,19 @@ int instrumento_listar(Instrumento array[], int size)
     {
         for(i=0;i<size;i++)
         {
-            if(array[i].isEmpty==1)
+            if(array[i].isEmpty!=1)
             {
                 if(array[i].tipo==1)
                 {
-                    printf("\n Posicion: %d\n ID: %d\n Nombre: %s\n Tipo: Cuerda",
+                    printf("\n ID: %d\n Nombre: %s\n Tipo: Cuerda",
                         array[i].id,array[i].nombre);
                 }else if(array[i].tipo==2)
                 {
-                    printf("\n Posicion: %d\n ID: %d\n Nombre: %s\n Tipo: Viento-madera",
+                    printf("\n ID: %d\n Nombre: %s\n Tipo: Viento-madera",
                         array[i].id,array[i].nombre);
                 }else if(array[i].tipo==3)
                 {
-                    printf("\n Posicion: %d\n ID: %d\n Nombre: %s\n Tipo: Viento-metal ",
+                    printf("\n ID: %d\n Nombre: %s\n Tipo: Viento-metal ",
                         array[i].id,array[i].nombre);
                 }
                 else
