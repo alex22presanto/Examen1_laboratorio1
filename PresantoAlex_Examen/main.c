@@ -14,15 +14,18 @@ int main()
 {
     int opcion;
     int opcion2;
-    int contadorIdOrquesta=0;
-    int contadorIdInstrumento=0;
-    int contadorIdMusico=0;
+    int contadorIdOrquesta=4;
+    int contadorIdInstrumento=5;
+    int contadorIdMusico=6;
     Orquesta arrayOrquesta[QTY_TIPO_O];
     Musico arrayMusico[QTY_TIPO_M];
     Instrumento arrayInstrumento[QTY_TIPO_I];
     orquesta_Inicializar(arrayOrquesta,QTY_TIPO_O);
     instrumento_Inicializar(arrayInstrumento,QTY_TIPO_I);
     musico_Inicializar(arrayMusico,QTY_TIPO_M);
+    harcodearMusico(arrayMusico);
+    harcodearInstrumento(arrayInstrumento);
+    harcodearOrquesta(arrayOrquesta);
     do
     {
         utn_getUnsignedInt("\n\n1. Orquesta \n2. Instrumento \n3. Musico \n4. Informes \n5. Salir\n",
@@ -60,7 +63,7 @@ int main()
                 switch(opcion2)
                 {
                     case 1:
-                        musico_alta(arrayMusico,QTY_TIPO_M,contadorIdMusico);
+                        musico_alta(arrayMusico,arrayInstrumento,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_I,QTY_TIPO_O,&contadorIdMusico);
                         break;
                     case 2:
                         musico_modificar(arrayMusico,arrayInstrumento,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_I,QTY_TIPO_O);
@@ -74,11 +77,12 @@ int main()
                 }
                 break;
             case 4:
-               utn_getUnsignedInt("\n1. Orquestas con mas de 5 personas\n2. Musicos con mas de 30 años\n3. Oruqesta de un lugar\n4. Orquesta comelta\n5. Musicos de una orquesta\n6. Orquesta con mas musicos\n7. Musicos por instrumento de cuerda\n8. Promedio de musicos por orquesta\n",
+               utn_getUnsignedInt("\n1. Orquestas con mas de 5 personas\n2. Musicos con mas de 30 años\n3. Oruqesta de un lugar\n4. Orquesta completa\n5. Musicos de una orquesta\n6. Orquesta con mas musicos\n7. Musicos por instrumento de cuerda\n8. Promedio de musicos por orquesta\n",
                "valor no valido",1,sizeof(int),1,8,3,&opcion2);
                switch(opcion2)
                {
                     case 1:
+                        musico_ordenar_xIDorquesta(arrayMusico,QTY_TIPO_M);
                         orquesta_lista_mas5(arrayMusico,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_O);
                         break;
                     case 2:
@@ -88,15 +92,21 @@ int main()
                         orquesta_lista_xLugar(arrayOrquesta,QTY_TIPO_O);
                         break;
                     case 4:
+                        musico_ordenar_xIDorquesta(arrayMusico,QTY_TIPO_M);
+                        orquesta_listar_completa(arrayMusico,arrayInstrumento,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_I,QTY_TIPO_O);
                         break;
                     case 5:
                         musico_listar_xOrquesta(arrayMusico,QTY_TIPO_M,contadorIdOrquesta);
                         break;
                     case 6:
+                        musico_ordenar_xIDorquesta(arrayMusico,QTY_TIPO_M);
+                        orquesta_lista_masMusicos(arrayMusico,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_O);
                         break;
                     case 7:
+                        musico_listar_xIstrumento_cuerda(arrayMusico,arrayInstrumento,QTY_TIPO_M,QTY_TIPO_I);
                         break;
                     case 8:
+                        musico_promedio_xOrquesta(arrayMusico,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_O);
                         break;
                }
         }

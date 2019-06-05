@@ -7,7 +7,13 @@
 #include "Orquesta.h"
 #define TEXT_SIZE 51
 
-
+/** \brief  inicializa la array en el campo .isEmpty en 1
+*
+* \param array Musico Array de musico
+* \param size int tamaño de array
+* \return int Return (-1) si array=NULL o size<0 (0) si Ok
+*
+*/
 int musico_Inicializar(Musico array[], int size)
 {
     int retorno=-1;
@@ -22,6 +28,13 @@ int musico_Inicializar(Musico array[], int size)
     return retorno;
 }
 
+/** \brief buscar en el campo isEmpty de una array la primer posicion que se encuentre vacia(1)
+ * \param array Musico Array de Musico
+ * \param size int tamaño de array
+ * \param posicion int* puntero a la posicion que se encontro vacia
+ * \return int Return (-1) si array=NULL,posicion=NULL, size<0 o no se encuntra posicion  (0) si se encuentra posicion vacia
+ *
+ */
 int musico_buscarEmpty(Musico array[], int size, int* posicion)
 {
     int retorno=-1;
@@ -41,12 +54,19 @@ int musico_buscarEmpty(Musico array[], int size, int* posicion)
     return retorno;
 }
 
-
+/** \brief busca el id(ingresado por el usuario) en una array de Musico
+ * \param array Musico Array de musico
+ * \param size int tamaño de array
+ * \param valorBuscado int id a buscar
+ * \param posicion int* puntero de la posicion encontrada
+ * \return int Return (-1) si array=NULL, size<0 o no se encontro el id (0) si encontro el id
+ *
+ */
 int musico_buscarID(Musico array[], int size, int valorBuscado, int* posicion)
 {
     int retorno=-1;
     int i;
-    if(array!= NULL && size>=0)
+    if(array!= NULL && size>=0 && posicion != NULL && valorBuscado>0)
     {
         for(i=0;i<size;i++)
         {
@@ -63,35 +83,49 @@ int musico_buscarID(Musico array[], int size, int valorBuscado, int* posicion)
     return retorno;
 }
 
-
-int musico_alta(Musico array[],int size,int* contadorID)
+ /** \brief Solicita los datos para completar la primer posicion vacia de un array
+ * \param array Musico Array de musico
+ * \param size int tamaño de array
+ * \param contadorID int* Puntero al ID unico que se va a asignar al nuevo elemento
+ * \return int Return (-1) si Error [largo no valido o NULL pointer o no hay posiciones vacias] - (0) si se agrega un nuevo elemento exitosamente
+ *
+ */
+int musico_alta(Musico arrayM[],Instrumento arrayI[],Orquesta arrayO[], int sizeM,int sizeI,int sizeO, int* contadorID)
 {
     int retorno=-1;
     int posicion;
-    if(array !=NULL && size>0 && contadorID!=NULL)
+    if(arrayM!=NULL && sizeM>0 && arrayI!=NULL && sizeI>0 && arrayO!=NULL && sizeO>0 && contadorID!=NULL)
     {
-        if(musico_buscarEmpty(array,size,&posicion)==-1)                          //
+        if(musico_buscarEmpty(arrayM,sizeM,&posicion)==-1)
         {
             printf("\nNo hay lugares vacios");
         }
         else
         {
             (*contadorID)++;
-            array[posicion].id=*contadorID;
-            array[posicion].isEmpty=0;
-            utn_getName("Ingrese el nombre\n: ","\nNombre no valido",1,TEXT_SIZE,3,array[posicion].nombre);
-            utn_getName("Ingrese el apellido\n: ","\nApelldio no valido",1,TEXT_SIZE,3,array[posicion].apellido);
-            utn_getUnsignedInt("\nIngrese la edad","\nEdad no valida",1,sizeof(int),1,100,3,&array[posicion].edad);
-            utn_getUnsignedInt("\n Ingrese el ID de la orquesta ","\nvalor no valido",1,sizeof(int),1,size,1,&array[posicion].idOrquesta);
-            utn_getUnsignedInt("\nIngrese el ID del Instrumento","\nvalor no valido",1,sizeof(int),1,size,1,&array[posicion].idInstrumento);
+            arrayM[posicion].id=*contadorID;
+            arrayM[posicion].isEmpty=0;
+            utn_getName("Ingrese el nombre\n: ","\nNombre no valido",1,TEXT_SIZE,3,arrayM[posicion].nombre);
+            utn_getName("Ingrese el apellido\n: ","\nApelldio no valido",1,TEXT_SIZE,3,arrayM[posicion].apellido);
+            utn_getUnsignedInt("\nIngrese la edad","\nEdad no valida",1,sizeof(int),1,100,3,&arrayM[posicion].edad);
+            orquesta_listar(arrayO,sizeO);
+            utn_getUnsignedInt("\n Ingrese el ID de la orquesta ","\nvalor no valido",1,sizeof(int),1,sizeO,1,&arrayM[posicion].idOrquesta);
+            instrumento_listar(arrayI,sizeI);
+            utn_getUnsignedInt("\nIngrese el ID del Instrumento","\nvalor no valido",1,sizeof(int),1,sizeI,1,&arrayM[posicion].idInstrumento);
             printf("\n Posicion: %d\n ID: %d\n Nombre: %s\n Apelldio: %s\nEdad: %d\n ID orquesta: %d\n ID instrumento: %d",
-                   posicion, array[posicion].id,array[posicion].nombre,array[posicion].apellido,array[posicion].edad,array[posicion].idOrquesta,array[posicion].idInstrumento);
+                   posicion, arrayM[posicion].id,arrayM[posicion].nombre,arrayM[posicion].apellido,arrayM[posicion].edad,arrayM[posicion].idOrquesta,arrayM[posicion].idInstrumento);
             retorno=0;
         }
     }
     return retorno;
 }
 
+/** \brief Borra un elemento del array por ID
+* \param array Musico Array de musico
+* \param size int Tamaño del array
+* \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se elimina el elemento exitosamente
+*
+*/
 int musico_baja(Musico array[], int sizeArray)
 {
     int retorno=-1;
@@ -119,6 +153,12 @@ int musico_baja(Musico array[], int sizeArray)
     return retorno;
 }
 
+/** \brief Busca un elemento por ID y modifica el campo que el ususario seleccione
+* \param array Muscio Array de musico
+* \param size int Tamaño del array
+* \return int Return (-1) si Error [largo no valido o NULL pointer o no encuentra elementos con el valor buscado] - (0) si se modifica el elemento exitosamente
+*
+*/
 int musico_modificar(Musico arrayM[],Instrumento arrayI[],Orquesta arrayO[],int sizeM,int sizeI,int sizeO)
 {
     int retorno=-1;
@@ -165,6 +205,13 @@ int musico_modificar(Musico arrayM[],Instrumento arrayI[],Orquesta arrayO[],int 
     }
     return retorno;
 }
+
+/** \brief imprime todos los elementos de una array de musico
+ * \param array Musico Array de musico
+ * \param size int tamaño de array
+ * \return int Return (-1) si array=NULL o size<0 (0) si Ok
+ *
+ */
 
 int musico_listar(Musico array[], int size)
 {

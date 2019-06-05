@@ -1,16 +1,50 @@
 # depslib dependency file v1.0
-1558054756 source:/home/alumno/Escritorio/PresantoAlex_Examen/Insturmento.c
+1559180264 source:/home/alumno/Escritorio/PresantoAlex_Examen/Insturmento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Insturmento.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Insturmento.h"
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
 	"Insturmento.h"
 
-1558553363 to.h"
+1558569377 to.h"
 
-1558043529 source:/home/alumno/Escritorio/PresantoAlex_Examen/Musico.c
+1559180264 source:/home/alumno/Escritorio/PresantoAlex_Examen/Musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Musico.h"
+	"Insturmento.h"
+	"Orquesta.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Musico.h"
+	"Insturmento.h"
+	"Orquesta.h"
 
-1558044293 source:/home/alumno/Escritorio/PresantoAlex_Examen/utn.c
+1559179615 h"
+
+1559180264 source:/home/alumno/Escritorio/PresantoAlex_Examen/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -18,9 +52,9 @@
 
 1558044292 
 
-1558044327 /home/alumno/Escritorio/PresantoAlex_Examen/utn.h
+1559180264 /home/alumno/Escritorio/PresantoAlex_Examen/utn.h
 
-1558050936 source:/home/alumno/Escritorio/PresantoAlex_Examen/main.c
+1559262030 source:/home/alumno/Escritorio/PresantoAlex_Examen/main.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
@@ -28,21 +62,49 @@
 	"Insturmento.h"
 	"Musico.h"
 	"Orquesta.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Insturmento.h"
+	"Musico.h"
+	"Orquesta.h"
+	"Informes.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Insturmento.h"
+	"Musico.h"
+	"Orquesta.h"
+	"Informes.h"
 
-1558553382 h"
-
-1558046900 source:/home/alumno/Escritorio/PresantoAlex_Examen/Orquesta.c
+1559180264 source:/home/alumno/Escritorio/PresantoAlex_Examen/Orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Orquesta.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Orquesta.h"
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
 	"Orquesta.h"
 
-1558045288 /home/alumno/Escritorio/PresantoAlex_Examen/Orquesta.h
+1559180264 /home/alumno/Escritorio/PresantoAlex_Examen/Orquesta.h
 
-1558049995 /home/alumno/Escritorio/PresantoAlex_Examen/Insturmento.h
+1559180264 /home/alumno/Escritorio/PresantoAlex_Examen/Insturmento.h
 
-1558054771 /home/alumno/Escritorio/PresantoAlex_Examen/Musico.h
+1559180264 /home/alumno/Escritorio/PresantoAlex_Examen/Musico.h
+	"Orquesta.h"
+	"Insturmento.h"
+	"Orquesta.h"
+	"Insturmento.h"
 
 1558054756 source:d:\presantoalex_examen\insturmento.c
 	<string.h>
@@ -92,18 +154,18 @@
 	<string.h>
 	"utn.h"
 
-1558549365 source:c:\users\presa\desktop\presantoalex_examen\insturmento.c
+1559748169 source:c:\users\presa\desktop\presantoalex_examen\insturmento.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
 	"Insturmento.h"
 
-1558044326 c:\users\presa\desktop\presantoalex_examen\utn.h
+1559180264 c:\users\presa\desktop\presantoalex_examen\utn.h
 
-1558049994 c:\users\presa\desktop\presantoalex_examen\insturmento.h
+1559180264 c:\users\presa\desktop\presantoalex_examen\insturmento.h
 
-1558471836 source:c:\users\presa\desktop\presantoalex_examen\musico.c
+1559748141 source:c:\users\presa\desktop\presantoalex_examen\musico.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
@@ -112,26 +174,26 @@
 	"Insturmento.h"
 	"Orquesta.h"
 
-1558553363 c:\users\presa\desktop\presantoalex_examen\musico.h
+1559684451 c:\users\presa\desktop\presantoalex_examen\musico.h
 	"Orquesta.h"
 	"Insturmento.h"
 
-1558045288 c:\users\presa\desktop\presantoalex_examen\orquesta.h
+1559180264 c:\users\presa\desktop\presantoalex_examen\orquesta.h
 
-1558548981 source:c:\users\presa\desktop\presantoalex_examen\orquesta.c
+1559747721 source:c:\users\presa\desktop\presantoalex_examen\orquesta.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
 	"Orquesta.h"
 
-1558044292 source:c:\users\presa\desktop\presantoalex_examen\utn.c
+1559180264 source:c:\users\presa\desktop\presantoalex_examen\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"utn.h"
 
-1558553382 source:c:\users\presa\desktop\presantoalex_examen\main.c
+1559748891 source:c:\users\presa\desktop\presantoalex_examen\main.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
@@ -139,6 +201,7 @@
 	"Insturmento.h"
 	"Musico.h"
 	"Orquesta.h"
+	"Informes.h"
 
 1558549366 source:/media/alumno/KINGSTON/Biblioteca/PresantoAlex_Examen/Insturmento.c
 	<string.h>
@@ -166,18 +229,26 @@
 	<string.h>
 	"utn.h"
 
-1558549366 source:/home/alumno/Escritorio/PresantoAlex_Examen/Insturmento.c
+1559180264 /home/alumno/Escritorio/PresantoAlex_Examen/Informes.h
+	"Orquesta.h"
+	"Insturmento.h"
+	"Musico.h"
+	"Orquesta.h"
+	"Insturmento.h"
+	"Musico.h"
+
+1559168077 source:c:\users\presa\desktop\233\examen1_laboratorio1-master\presantoalex_examen\insturmento.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
 	"Insturmento.h"
 
-1558044326 /home/alumno/Escritorio/PresantoAlex_Examen/utn.h
+1558569377 c:\users\presa\desktop\233\examen1_laboratorio1-master\presantoalex_examen\utn.h
 
-1558049994 /home/alumno/Escritorio/PresantoAlex_Examen/Insturmento.h
+1559163359 c:\users\presa\desktop\233\examen1_laboratorio1-master\presantoalex_examen\insturmento.h
 
-1558566834 source:/home/alumno/Escritorio/PresantoAlex_Examen/main.c
+1559179072 source:c:\users\presa\desktop\233\examen1_laboratorio1-master\presantoalex_examen\main.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
@@ -187,13 +258,18 @@
 	"Orquesta.h"
 	"Informes.h"
 
-1558553364 /home/alumno/Escritorio/PresantoAlex_Examen/Musico.h
+1558569377 c:\users\presa\desktop\233\examen1_laboratorio1-master\presantoalex_examen\musico.h
 	"Orquesta.h"
 	"Insturmento.h"
 
-1558045288 /home/alumno/Escritorio/PresantoAlex_Examen/Orquesta.h
+1558569377 c:\users\presa\desktop\233\examen1_laboratorio1-master\presantoalex_examen\orquesta.h
 
-1558553696 source:/home/alumno/Escritorio/PresantoAlex_Examen/Musico.c
+1559178558 c:\users\presa\desktop\233\examen1_laboratorio1-master\presantoalex_examen\informes.h
+	"Orquesta.h"
+	"Insturmento.h"
+	"Musico.h"
+
+1559168610 source:c:\users\presa\desktop\233\examen1_laboratorio1-master\presantoalex_examen\musico.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
@@ -202,20 +278,44 @@
 	"Insturmento.h"
 	"Orquesta.h"
 
-1558548982 source:/home/alumno/Escritorio/PresantoAlex_Examen/Orquesta.c
+1559167988 source:c:\users\presa\desktop\233\examen1_laboratorio1-master\presantoalex_examen\orquesta.c
 	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	"utn.h"
 	"Orquesta.h"
 
-1558044292 source:/home/alumno/Escritorio/PresantoAlex_Examen/utn.c
+1558569377 source:c:\users\presa\desktop\233\examen1_laboratorio1-master\presantoalex_examen\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"utn.h"
 
-1558568914 /home/alumno/Escritorio/PresantoAlex_Examen/Informes.h
+1559179615 source:c:\users\presa\desktop\233\examen1_laboratorio1-master\presantoalex_examen\informes.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Informes.h"
+	"Orquesta.h"
+
+1559262064 source:/home/alumno/Escritorio/PresantoAlex_Examen/Informes.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Informes.h"
+	"Orquesta.h"
+
+1559749860 source:c:\users\presa\desktop\presantoalex_examen\informes.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"Informes.h"
+	"Orquesta.h"
+
+1559180264 c:\users\presa\desktop\presantoalex_examen\informes.h
 	"Orquesta.h"
 	"Insturmento.h"
 	"Musico.h"

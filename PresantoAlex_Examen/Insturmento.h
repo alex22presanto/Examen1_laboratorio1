@@ -17,5 +17,6 @@ int instrumento_Inicializar(Instrumento array[], int size);
 int instrumento_buscarEmpty(Instrumento array[], int size, int* posicion);
 int instrumento_alta(Instrumento array[], int size, int* contadorID);
 int instrumento_listar(Instrumento array[], int size);
+int instrumento_buscarID(Instrumento array[], int size, int valorBuscado, int* posicion);
 
 
