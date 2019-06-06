@@ -5,7 +5,7 @@
 #include "Informes.h"
 #include "Orquesta.h"
 #define TEXT_SIZE 51
-
+//def
 
 /** \brief Inicializa las primeras 6 posiciones del array
  *          musico
@@ -90,36 +90,40 @@ int orquesta_lista_mas5(Musico arrayM[],Orquesta arrayO[],int sizeM, int sizeO)
     int posicion;
     if(arrayM!=NULL && arrayO!=NULL && sizeM>0 && sizeO>0)
     {
-        buffer= arrayM[0].idOrquesta;
-        for(i=1;i<sizeM;i++)
+        for(i=0;i<sizeM;i++)
         {
-            if(arrayM[i].idOrquesta==buffer && contador<=5)
+            if(arrayM[i].idOrquesta==buffer && contador<=5 || i==0 && arrayM[i].isEmpty==0)
             {
                 contador++;
+                if (i==0)
+                {
+                    buffer= arrayM[0].idOrquesta;
+                }
             }
             else
             {
+                if(contador==5)
+                {
+                    orquesta_buscarID(arrayO,sizeO,arrayM[i-1].idOrquesta,&posicion);
+                    switch(arrayO[posicion].tipo)
+                    {
+                        case 1:
+                            printf("\n Posicion: %d\n ID: %d\n Nombre: %s\n Lugar: %s\n Tipo: Sinfonica",
+                                posicion, arrayO[posicion].id,arrayO[posicion].nombre,arrayO[posicion].lugar);
+                            break;
+                        case 2:
+                            printf("\n Posicion: %d\n ID: %d\n Nombre: %s\n Lugar: %s\n Tipo: Filarmonica",
+                                posicion, arrayO[posicion].id,arrayO[posicion].nombre,arrayO[posicion].lugar);
+                            break;
+                        case 3:
+                            printf("\n Posicion: %d\n ID: %d\n Nombre: %s\n Lugar: %s\n Tipo: Camara",
+                                posicion, arrayO[posicion].id,arrayO[posicion].nombre,arrayO[posicion].lugar);
+                    }
+                }
                 contador=0;
                 buffer=arrayM[i].idOrquesta;
             }
-            if(contador==5)
-            {
-                orquesta_buscarID(arrayO,sizeO,arrayM[i].idOrquesta,&posicion);
-                switch(arrayO[posicion].tipo)
-                {
-                    case 1:
-                        printf("\n Posicion: %d\n ID: %d\n Nombre: %s\n Lugar: %s\n Tipo: Sinfonica",
-                            posicion, arrayO[posicion].id,arrayO[posicion].nombre,arrayO[posicion].lugar);
-                        break;
-                    case 2:
-                        printf("\n Posicion: %d\n ID: %d\n Nombre: %s\n Lugar: %s\n Tipo: Filarmonica",
-                            posicion, arrayO[posicion].id,arrayO[posicion].nombre,arrayO[posicion].lugar);
-                        break;
-                    case 3:
-                        printf("\n Posicion: %d\n ID: %d\n Nombre: %s\n Lugar: %s\n Tipo: Camara",
-                            posicion, arrayO[posicion].id,arrayO[posicion].nombre,arrayO[posicion].lugar);
-                }
-            }
+
         }
         retorno=0;
     }
@@ -281,7 +285,6 @@ int orquesta_lista_masMusicos(Musico arrayM[],Orquesta arrayO[],int sizeM, int s
             id = arrayM[i].idOrquesta;
             contador1=0;
             }
-            printf("asd  %d",id);
         }
         orquesta_buscarID(arrayO,sizeO,id2,&posicion);
         switch(arrayO[posicion].tipo)
@@ -325,7 +328,6 @@ int musico_promedio_xOrquesta(Musico arrayM[],Orquesta arrayO[],int sizeM, int s
             if(arrayM[i].isEmpty!=1)
             {
                 contadorM++;
-                printf("%d",contadorM);
             }
         }
         for(i=0;i<sizeO;i++)
@@ -333,11 +335,10 @@ int musico_promedio_xOrquesta(Musico arrayM[],Orquesta arrayO[],int sizeM, int s
             if(arrayO[i].isEmpty!=1)
             {
                 contadorO++;
-                printf("%d",contadorO);
             }
         }
-        promedio=contadorM/contadorO;
-        printf("\n El promedio de musicos por orquesta es: %d\n",promedio);
+        promedio=(float) contadorM/ contadorO;
+        printf("\n El promedio de musicos por orquesta es: %f\n",promedio);
         retorno=0;
     }
     return retorno;

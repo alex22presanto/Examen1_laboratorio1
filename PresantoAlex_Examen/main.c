@@ -17,6 +17,7 @@ int main()
     int contadorIdOrquesta=4;
     int contadorIdInstrumento=5;
     int contadorIdMusico=6;
+    int i;
     Orquesta arrayOrquesta[QTY_TIPO_O];
     Musico arrayMusico[QTY_TIPO_M];
     Instrumento arrayInstrumento[QTY_TIPO_I];
@@ -37,13 +38,13 @@ int main()
                 switch(opcion2)
                 {
                     case 1:
-                        orquesta_alta(arrayOrquesta,QTY_TIPO_O,&contadorIdOrquesta);
+                        i=orquesta_alta(arrayOrquesta,QTY_TIPO_O,&contadorIdOrquesta);
                         break;
                     case 2:
-                        orquesta_baja(arrayOrquesta,QTY_TIPO_O);
+                        i=orquesta_baja(arrayOrquesta,QTY_TIPO_O);
                         break;
                     case 3:
-                        orquesta_listar(arrayOrquesta,QTY_TIPO_O);
+                        i=orquesta_listar(arrayOrquesta,QTY_TIPO_O);
                 }
                 break;
             case 2:
@@ -51,10 +52,10 @@ int main()
                 switch(opcion2)
                 {
                     case 1:
-                        instrumento_alta(arrayInstrumento,QTY_TIPO_I,&contadorIdInstrumento);
+                        i=instrumento_alta(arrayInstrumento,QTY_TIPO_I,&contadorIdInstrumento);
                         break;
                     case 2:
-                        instrumento_listar(arrayInstrumento,QTY_TIPO_I);
+                        i=instrumento_listar(arrayInstrumento,QTY_TIPO_I);
                         break;
                 }
                 break;
@@ -63,16 +64,16 @@ int main()
                 switch(opcion2)
                 {
                     case 1:
-                        musico_alta(arrayMusico,arrayInstrumento,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_I,QTY_TIPO_O,&contadorIdMusico);
+                        i=musico_alta(arrayMusico,arrayInstrumento,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_I,QTY_TIPO_O,&contadorIdMusico);
                         break;
                     case 2:
-                        musico_modificar(arrayMusico,arrayInstrumento,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_I,QTY_TIPO_O);
+                        i=musico_modificar(arrayMusico,arrayInstrumento,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_I,QTY_TIPO_O);
                         break;
                     case 3:
-                        musico_baja(arrayMusico,QTY_TIPO_M);
+                        i=musico_baja(arrayMusico,QTY_TIPO_M);
                         break;
                     case 4:
-                        musico_listar(arrayMusico,QTY_TIPO_M);
+                        i=musico_listar(arrayMusico,QTY_TIPO_M);
                         break;
                 }
                 break;
@@ -82,35 +83,38 @@ int main()
                switch(opcion2)
                {
                     case 1:
-                        musico_ordenar_xIDorquesta(arrayMusico,QTY_TIPO_M);
-                        orquesta_lista_mas5(arrayMusico,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_O);
+                        i=musico_ordenar_xIDorquesta(arrayMusico,QTY_TIPO_M);
+                        i=orquesta_lista_mas5(arrayMusico,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_O);
                         break;
                     case 2:
-                        muscio_lista_mas30(arrayMusico,QTY_TIPO_M);
+                        i=muscio_lista_mas30(arrayMusico,QTY_TIPO_M);
                         break;
                     case 3:
-                        orquesta_lista_xLugar(arrayOrquesta,QTY_TIPO_O);
+                        i=orquesta_lista_xLugar(arrayOrquesta,QTY_TIPO_O);
                         break;
                     case 4:
-                        musico_ordenar_xIDorquesta(arrayMusico,QTY_TIPO_M);
-                        orquesta_listar_completa(arrayMusico,arrayInstrumento,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_I,QTY_TIPO_O);
+                        i=musico_ordenar_xIDorquesta(arrayMusico,QTY_TIPO_M);
+                        i=orquesta_listar_completa(arrayMusico,arrayInstrumento,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_I,QTY_TIPO_O);
                         break;
                     case 5:
-                        musico_listar_xOrquesta(arrayMusico,QTY_TIPO_M,contadorIdOrquesta);
+                        i=musico_listar_xOrquesta(arrayMusico,QTY_TIPO_M,contadorIdOrquesta);
                         break;
                     case 6:
-                        musico_ordenar_xIDorquesta(arrayMusico,QTY_TIPO_M);
-                        orquesta_lista_masMusicos(arrayMusico,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_O);
+                        i=musico_ordenar_xIDorquesta(arrayMusico,QTY_TIPO_M);
+                        i=orquesta_lista_masMusicos(arrayMusico,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_O);
                         break;
                     case 7:
-                        musico_listar_xIstrumento_cuerda(arrayMusico,arrayInstrumento,QTY_TIPO_M,QTY_TIPO_I);
+                        i=musico_listar_xIstrumento_cuerda(arrayMusico,arrayInstrumento,QTY_TIPO_M,QTY_TIPO_I);
                         break;
                     case 8:
-                        musico_promedio_xOrquesta(arrayMusico,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_O);
+                        i=musico_promedio_xOrquesta(arrayMusico,arrayOrquesta,QTY_TIPO_M,QTY_TIPO_O);
                         break;
                }
         }
-    }
-    while(opcion!=5);
+        if (i!=0)
+        {
+            printf("\nOcurrio un error intente nuevamente\n");
+        }
+    }while(opcion!=5);
     return 0;
 }
